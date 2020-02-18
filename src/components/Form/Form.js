@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-// import { useAddVideo } from '../../hooks/videos';
+
+import { getQuery } from '../../services/rijksMuseumAPI';
+import { useDispatch } from 'react-redux';
 
 const Form = () => {
   const [searchArtist, setSearchArtist] = useState('');
+  const dispatch = useDispatch();
   
 
   const handleSubmit = event => {
     event.preventDefault();
-    setSearchArtist('');
+    // setSearchArtist('');
+    dispatch(getQuery(searchArtist));
   };
 
   return (
