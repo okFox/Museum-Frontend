@@ -6,7 +6,6 @@ const request = url => {
       return json;
     });
 };
-
 export const getQuery = () => {
   request('https://www.rijksmuseum.nl/api/en/collection?key=O38ESSI9&imgonly=true&q=${query}')
     .then(({ results }) => {
