@@ -10,7 +10,7 @@ const request = url => {
 
 
 export const getQuery = () => {
-  
+
   request(`https://www.rijksmuseum.nl/api/en/collection?key=O38ESSI9&imgonly=true&q=${searchArtist}`)
     .then(({ results }) => {
       return results.artObjects.map((art) => {
@@ -22,8 +22,8 @@ export const getQuery = () => {
           link: art.links.web
         };
       });
-      console.log(results);
-      // return results;
+
+
       
     });
     
